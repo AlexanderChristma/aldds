@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.4-web/css/all.min.css">
+    
+    
+</head>
+<body style="background-color:#311432;">
+
+        <div id="Login-div"> <br>
+            <h2 class="meta">Login</h2>
+            <h3 class="ham"></h3>
+            <h3 id="eeesre"></h3>
+            <input type="email" id="login-name" class="text-field" name="name" placeholder="Name"><br>
+            <input type="password" id="login-password" class="text-field" name="password" placeholder="password"><br>
+            <input type="password" id="login-pass" class="text-field" name="password" placeholder="Confirm-password"><br>        
+            <button id="logins-btn">Login</button>
+    
+        </div>
+
+<script>
+ var namew = document.getElementById('login-name');
+ var ham = document.querySelector('.ham');
+ var pasw =  document.getElementById('login-password');
+ var pase =  document.getElementById('login-pass');
+ var eeere =  document.getElementById('eeesre');
+ var btnse =  document.getElementById('logins-btn');
+ var letters =  /^[a-zA-Z]*$/;
+
+ var hg = namew.value;
+
+ btnse.addEventListener('click', ()=>{
+  if(namew.value === "" || pasw.value === "" || pase.value === ""){
+    eeere.innerHTML ="pls fill all input";
+  }
+  else if (namew.value.length <=3){
+    eeere.innerHTML ="name should be more than 3 letters"
+  }
+  else if (!namew.value.match(letters)){
+    eeere.innerHTML ="name should contain just alphabate"
+  }
+  else if (pasw.value.length <= 5){
+    eeere.innerHTML ="password should be more than 5 characters";
+
+  }
+  else if (pasw.value != pase.value){
+    eeere.innerHTML ="password mismatched";
+
+  }
+  
+  else{
+    window.location.assign("pic.html");  
+    ham.innerHTML="Welcome To Faacom"
+       eeere.innerHTML = "";   
+  }
+  
+  
+ 
+ });
+
+</script>
+    
+
+</body>
+</html>
